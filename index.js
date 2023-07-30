@@ -91,3 +91,10 @@ var finances = [
 
 // The total number of months included in the dataset.
 console.log("Total Months: " + finances.length);
+
+// The net total amount of Profit/Losses over the entire period.
+  
+var secondItems = finances.map(innerArr => innerArr[1]);
+console.log(secondItems);
+
+
