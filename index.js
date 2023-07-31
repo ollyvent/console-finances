@@ -93,6 +93,7 @@ var finances = [
 
 var totalMonths = finances.length;
 console.log("Total Months: " + totalMonths);
+alert("Total Months: " + totalMonths)
 
 // The net total amount of Profit/Losses over the entire period.
 var profitLosses = finances.map(innerArr => innerArr[1]); //selected all second items in nested array(profits/losses only)
@@ -100,6 +101,7 @@ var profitLosses = finances.map(innerArr => innerArr[1]); //selected all second 
 
 var netProfit = profitLosses.reduce((a, b) => a + b); //calculates the net profit
 console.log("Total: $" + netProfit);
+alert("Total: $" + netProfit)
 
 
 //find average increase in profits and losses
@@ -118,6 +120,7 @@ var averageinc = calculateAverageinc(finances);               //result of averag
 
 var averageinc2Dp = averageinc.toFixed(2);                    //round up to 2 decimal places
 console.log("Average Change: " + averageinc2Dp);
+alert("Average Change: " + averageinc2Dp)
 
 //The greatest increase in profits (date and amount) over the entire period.
 
@@ -136,6 +139,7 @@ for (var i = 0; i < totalMonths - 1; i++) {       //loop accross finances
 }
 
 console.log("Greatest Increase in Profits/Losses: " + hightstIncPeriod + " ($" + highestInc + ")" );
+alert("Greatest Increase in Profits/Losses: " + hightstIncPeriod + " ($" + highestInc + ")" )
 
 //The greatest decrease in losses (date and amount) over the entire period.
 
@@ -154,6 +158,6 @@ for (var i = 0; i < totalMonths - 1; i++) {       //loop accross finances
 }
 
 console.log("Greatest Decrease in Profits/Losses: " + greatestDecPeriod + " ($" + greatestDec + ")" );
-
+alert("Greatest Decrease in Profits/Losses: " + greatestDecPeriod + " ($" + greatestDec + ")" )
 
 
