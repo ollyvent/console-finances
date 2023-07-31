@@ -1,5 +1,5 @@
 
-// data set
+// profitArray set
 var finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
@@ -89,16 +89,51 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-// The total number of months included in the dataset.
+// The total number of months included in the profitArrayset.
 var totalMonths = finances.length;
-console.log(totalMonths);
+console.log("Total Months: " + totalMonths);
 
 // The net total amount of Profit/Losses over the entire period.
 var profitLosses = finances.map(innerArr => innerArr[1]); //selected all second items in nested array(profits/losses only)
 // console.log(profitLosses);
 
-let netProfit = profitLosses.reduce((a, b) => a + b);
-console.log("$" + netProfit);
+var netProfit = profitLosses.reduce((a, b) => a + b); //calculates the net profit
+console.log("Total: $" + netProfit);
+
+
+//find average increase in profits and losses
+
+function calculateAverageinc(profitArray) {   //create variable for use in a function to loop with
+  var pLossinc = 0;                                       //profit and loss increase
+  for (var i = 1; i < totalMonths; i++) {                   //start array iteration from second month
+    var inc = profitArray[i][1] - profitArray[i - 1][1];      //calculates the total change
+    pLossinc += inc;
+  }
+  return pLossinc / (profitArray.length - 1);                 //calculates the average change
+}
+
+var averageinc = calculateAverageinc(finances);               //result of average change
+
+
+var averageinc2Dp = averageinc.toFixed(2);                    //round up to 2 decimal places
+console.log("Average Change: " + averageinc2Dp);
+
+//The greatest increase in profits (date and amount) over the entire period.
+var highestInc = 0;             //variable to input highest increase in profits
+var hightstIncPeriod;
+
+for (var i = 0; i < totalMonths - 1; i++) {       //loop accross finances
+  var presentProfit = finances[i][1];             //compute increase from current month to next
+  var nextProfit = finances[i + 1][1];
+  var inc = nextProfit - presentProfit;
+
+  if (inc > highestInc) {                         //if the increase calculated exceeds the last one, adjust the highest increase and its date 
+    highestInc = inc;
+    hightstIncPeriod = finances[i + 1][0];        //corresponding date
+  }
+}
+
+console.log("Greatest Increase in Profits/Losses: " + hightstIncPeriod + " ($" + highestInc + ")" );
 
 
 
