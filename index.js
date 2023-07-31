@@ -90,6 +90,7 @@ var finances = [
 ];
 
 // The total number of months included in the profitArrayset.
+
 var totalMonths = finances.length;
 console.log("Total Months: " + totalMonths);
 
@@ -119,6 +120,7 @@ var averageinc2Dp = averageinc.toFixed(2);                    //round up to 2 de
 console.log("Average Change: " + averageinc2Dp);
 
 //The greatest increase in profits (date and amount) over the entire period.
+
 var highestInc = 0;             //variable to input highest increase in profits
 var hightstIncPeriod;
 
@@ -134,6 +136,24 @@ for (var i = 0; i < totalMonths - 1; i++) {       //loop accross finances
 }
 
 console.log("Greatest Increase in Profits/Losses: " + hightstIncPeriod + " ($" + highestInc + ")" );
+
+//The greatest decrease in losses (date and amount) over the entire period.
+
+var greatestDec = 0;             //variable to input highest decrease in profits
+var greatestDecPeriod;
+
+for (var i = 0; i < totalMonths - 1; i++) {       //loop accross finances
+  var presentProfit = finances[i][1];             //compute increase from current month to next
+  var nextProfit = finances[i + 1][1];
+  var dec = presentProfit - nextProfit;
+
+  if (dec > greatestDec) {                         //if the decrease calculated exceeds the last one, adjust the lowest decrease and its date 
+    greatestDec = dec;
+    greatestDecPeriod = finances[i + 1][0];        //corresponding date
+  }
+}
+
+console.log("Greatest Decrease in Profits/Losses: " + greatestDecPeriod + " ($" + greatestDec + ")" );
 
 
 

@@ -22,3 +22,4 @@ The following challenges  are addressed as per the user's needs:
 3. Git/GitHub
 
 ## Image of the Result
+![Alt text](<console fin-1.jpg>)
