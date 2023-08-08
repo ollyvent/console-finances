@@ -1,7 +1,7 @@
 # console-finances
 
 ## Instructions
-A a developer, I have been given a dataset composed of arrays with two fields: Date and Profit/Losses. My taske here is to analyse the records provided by writing Javascript code to solve the user's problems.
+A a developer, I have been given a dataset composed of arrays with two fields: Date and Profit/Losses. My task here is to analyse the records provided by writing Javascript code to solve the user's problems.
 
 ## Challenge
 The following challenges  are addressed as per the user's needs:
@@ -20,6 +20,10 @@ The following challenges  are addressed as per the user's needs:
 1. VsCose
 2. Google (bing) Search
 3. Git/GitHub
+
+## URLs
+    * My github Repository: https://github.com/ollyvent/console-finances.git
+    * My Deployed Repository: https://ollyvent.github.io/console-finances/
 
 ## Image of the Result
 ![Alt text](<console fin-1.jpg>)
